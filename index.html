@@ -17,11 +17,11 @@
    <div class="col">
   <div class="mb-3">
       <label for="clientId" class="form-label">Client ID</label>
-      <input type="text" class="form-control" id="clientId" placeholder="">
+      <input type="text" class="form-control" id="clientId" placeholder="" required>
   </div>
   <div class="mb-3">
       <label for="clientSecret" class="form-label">Client Secret</label>
-      <input type="text" class="form-control" id="clientSecret" placeholder="">
+      <input type="text" class="form-control" id="clientSecret" placeholder="" required>
   </div>
   <input class="refreshB" type="button" onclick="requestAuthorization()" value="Request Authorization"><br/>
 </div>
@@ -36,8 +36,8 @@
         <div class="figT"><figcaption id="fig" class="fig">Now Listening to:</figcaption></div>
         <div class="justplay"> <audio controls autoplay class="audio" id= "audio" type="button"  src=""></div>
       </div>
-      <form id="search-form" class="search-form">
-          <input type="text" id="query" value="" class="inbox" placeholder="Type an Artist Name">
+      <form id="search-form" class="search-form" >
+          <input type="text" id="query" value="" class="inbox" placeholder="Type an Artist Name" required>
           <input class="refreshB" type="button" onclick="refreshAlbums()" value="Search">
       </form>
       <!-- <audio id="prev" -->
