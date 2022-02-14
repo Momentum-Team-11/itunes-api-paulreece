@@ -123,3 +123,7 @@ audio::-webkit-media-controls-volume-slider {
 .results {
   font-family: "lilita one";
 }
+.col {
+  justify-content: right;
+  width: 200px;
+}
