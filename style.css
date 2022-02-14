@@ -8,7 +8,12 @@
     "box17 box18 box19 box10";
   justify-content: flex-start;
   text-align: center;
-  grid-template-columns: 350px 350px 350px 350px;
+  /* grid-template-columns: 340px 340px 340px 340px; */
+  grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+  background-image: linear-gradient(to bottom right, purple, white);
+}
+body {
+  background-image: linear-gradient(to bottom right, purple, white);
 }
 img {
   height: 200px;
@@ -17,8 +22,104 @@ img {
 .songbox {
   text-align: center;
 }
+.albums {
+  display: flex;
+  flex: wrap;
+}
 .button {
-  background-color: white;
+  color: white;
+  background-image: linear-gradient(to bottom right, purple, lightgray);
   border: solid 1px lightgray;
   word-wrap: break-word;
+  border-radius: 10px;
+  font-family: "lilita one";
+  font-size: 15px;
+}
+h1 {
+  text-align: center;
+  font-family: "monoton", cursive;
+  font-size: 150px;
+  color: white;
+}
+p {
+  text-align: center;
+  color: white;
+  font-family: "lilita one";
+  font-size: 20px;
+}
+.search-form {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+}
+.refreshB {
+  font-family: "Courier New", Courier, monospace;
+}
+.inbox {
+  height: 40px;
+  width: 300px;
+}
+.prev {
+  display: grid;
+  justify-content: center;
+  border-bottom: solid 1px lightgray;
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: #5509cf;
+}
+
+audio::-webkit-media-controls-play-button {
+  background-color: #b1d4e0;
+  border-radius: 50%;
+}
+
+audio::-webkit-media-controls-play-button:hover {
+  background-color: rgba(177, 212, 224, 0.7);
+}
+audio::-webkit-media-controls-current-time-display {
+  color: #fff;
+}
+
+audio::-webkit-media-controls-time-remaining-display {
+  color: #fff;
+}
+
+audio::-webkit-media-controls-timeline {
+  background-color: #b1d4e0;
+  border-radius: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+audio::-webkit-media-controls-volume-slider {
+  background-color: #b1d4e0;
+  border-radius: 25px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.fig {
+  background-color: #5509cf;
+  color: white;
+  border: solid 1px lightgray;
+  border-radius: 20px;
+  padding-left: 10px;
+  font-family: "lilita one";
+  font-size: 30px;
+}
+.justplay {
+  display: grid;
+  justify-content: center;
+  padding: 10px;
+}
+.audio {
+  width: 600px;
+  height: 50px;
+}
+.refreshB {
+  font-family: "monoton";
+  font-size: 25px;
+}
+.results {
+  font-family: "lilita one";
 }

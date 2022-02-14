@@ -1,7 +1,7 @@
 var redirect_uri = "http://127.0.0.1:5500/";
 
-var client_id = "05af6e734df0448f83bff5cc4284fe53";
-var client_secret = "bf21043597334276a1e0cda354138ae5"; // In a real app you should not expose your client_secret to the user
+var client_id = "";
+var client_secret = "";
 
 var access_token = null;
 var refresh_token = null;
@@ -21,7 +21,6 @@ function onPageLoad() {
   } else {
     access_token = localStorage.getItem("access_token");
     if (access_token == null) {
-      // we don't have an access token so present token section
       document.getElementById("tokenSection").style.display = "block";
     } else {
       // we have an access token so present device section
@@ -50,7 +49,7 @@ function requestAuthorization() {
   client_id = document.getElementById("clientId").value;
   client_secret = document.getElementById("clientSecret").value;
   localStorage.setItem("client_id", client_id);
-  localStorage.setItem("client_secret", client_secret); // In a real app you should not expose your client_secret to the user
+  localStorage.setItem("client_secret", client_secret);
 
   let url = AUTHORIZE;
   url += "?client_id=" + client_id;
@@ -152,14 +151,7 @@ function handleCurrentlyPlayingResponse() {
         data.item.artists[0].name;
     }
 
-    if (data.device != null) {
-      // select device
-      currentDevice = data.device.id;
-      document.getElementById("devices").value = currentDevice;
-    }
-
     if (data.context != null) {
-      // select playlist
       currentPlaylist = data.context.uri;
       currentPlaylist = currentPlaylist.substring(
         currentPlaylist.lastIndexOf(":") + 1,
@@ -205,6 +197,7 @@ function addAlbum(item) {
   let prev = document.getElementById("prev");
   let prevURL = item.preview_url;
   console.log(prevURL);
+  let fig = document.getElementById("fig");
   let audio = document.getElementById("audio");
   let songName =
     '<input class="button" id= "' +
@@ -218,6 +211,8 @@ function addAlbum(item) {
   //     '">';
   document.getElementById("albums").addEventListener("click", function (e) {
     console.log(e.target);
+    fig.innerHTML = "Now Listening to: ";
+    fig.innerHTML += e.target.value;
     audio.removeAttribute("src", e.target.id);
     audio.setAttribute("src", e.target.id);
     audio.play;
